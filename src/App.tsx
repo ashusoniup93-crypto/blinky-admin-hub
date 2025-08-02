@@ -7,6 +7,8 @@ import { AdminLayout } from "./components/AdminLayout";
 import Dashboard from "./pages/Dashboard";
 import Orders from "./pages/Orders";
 import Products from "./pages/Products";
+import Customers from "./pages/Customers";
+import Categories from "./pages/Categories";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,8 +24,8 @@ const App = () => (
             <Route index element={<Dashboard />} />
             <Route path="orders" element={<Orders />} />
             <Route path="products" element={<Products />} />
-            <Route path="categories" element={<div>Categories Page</div>} />
-            <Route path="customers" element={<div>Customers Page</div>} />
+            <Route path="categories" element={<Categories />} />
+            <Route path="customers" element={<Customers />} />
             <Route path="invoices" element={<div>Invoices Page</div>} />
             <Route path="promos" element={<div>Promo Codes Page</div>} />
             <Route path="banners" element={<div>Banners Page</div>} />

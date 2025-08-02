@@ -2,7 +2,7 @@ import { DashboardStats } from "@/components/DashboardStats";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Clock, Eye, MapPin } from "lucide-react";
+import { Clock, Eye, MapPin, UserPlus, CreditCard, FileText, TrendingUp, Package, Settings, Percent } from "lucide-react";
 
 const recentOrders = [
   {
@@ -56,6 +56,49 @@ const Dashboard = () => {
 
       <DashboardStats />
 
+      {/* Quick Actions Grid */}
+      <Card>
+        <CardHeader>
+          <CardTitle>Quick Actions</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            <Button variant="outline" className="h-20 flex-col gap-2">
+              <UserPlus className="h-6 w-6" />
+              <span className="text-xs">Add Customer</span>
+            </Button>
+            <Button variant="outline" className="h-20 flex-col gap-2">
+              <CreditCard className="h-6 w-6" />
+              <span className="text-xs">Collect Money</span>
+            </Button>
+            <Button variant="outline" className="h-20 flex-col gap-2">
+              <CreditCard className="h-6 w-6 rotate-180" />
+              <span className="text-xs">Pay Money</span>
+            </Button>
+            <Button variant="outline" className="h-20 flex-col gap-2">
+              <FileText className="h-6 w-6" />
+              <span className="text-xs">Create Invoice</span>
+            </Button>
+            <Button variant="outline" className="h-20 flex-col gap-2">
+              <Package className="h-6 w-6" />
+              <span className="text-xs">Add Product</span>
+            </Button>
+            <Button variant="outline" className="h-20 flex-col gap-2">
+              <TrendingUp className="h-6 w-6" />
+              <span className="text-xs">Reports</span>
+            </Button>
+            <Button variant="outline" className="h-20 flex-col gap-2">
+              <Percent className="h-6 w-6" />
+              <span className="text-xs">Promo Codes</span>
+            </Button>
+            <Button variant="outline" className="h-20 flex-col gap-2">
+              <Settings className="h-6 w-6" />
+              <span className="text-xs">Settings</span>
+            </Button>
+          </div>
+        </CardContent>
+      </Card>
+
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Recent Orders */}
         <Card className="lg:col-span-2">
@@ -99,27 +142,33 @@ const Dashboard = () => {
           </CardContent>
         </Card>
 
-        {/* Quick Actions */}
+        {/* Recent Activity */}
         <Card>
           <CardHeader>
-            <CardTitle>Quick Actions</CardTitle>
+            <CardTitle>Recent Activity</CardTitle>
           </CardHeader>
           <CardContent className="space-y-3">
-            <Button className="w-full justify-start" variant="outline">
-              Add New Product
-            </Button>
-            <Button className="w-full justify-start" variant="outline">
-              Create Invoice
-            </Button>
-            <Button className="w-full justify-start" variant="outline">
-              Add Customer
-            </Button>
-            <Button className="w-full justify-start" variant="outline">
-              Update Banner
-            </Button>
-            <Button className="w-full justify-start" variant="outline">
-              Generate Promo Code
-            </Button>
+            <div className="flex items-center gap-3 p-2 bg-muted/50 rounded">
+              <UserPlus className="h-4 w-4 text-green-600" />
+              <div className="text-sm">
+                <p className="font-medium">New customer added</p>
+                <p className="text-muted-foreground">John Doe - 2 mins ago</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-3 p-2 bg-muted/50 rounded">
+              <Package className="h-4 w-4 text-blue-600" />
+              <div className="text-sm">
+                <p className="font-medium">Product updated</p>
+                <p className="text-muted-foreground">Organic Bananas - 5 mins ago</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-3 p-2 bg-muted/50 rounded">
+              <CreditCard className="h-4 w-4 text-purple-600" />
+              <div className="text-sm">
+                <p className="font-medium">Payment received</p>
+                <p className="text-muted-foreground">₹1,250 from Sarah Smith</p>
+              </div>
+            </div>
           </CardContent>
         </Card>
       </div>

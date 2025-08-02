@@ -47,7 +47,14 @@ const products = [
   },
 ];
 
-const categories = ["Fruits", "Vegetables", "Dairy", "Bakery", "Snacks", "Beverages"];
+const categories = [
+  { id: "1", name: "Fruits" },
+  { id: "2", name: "Vegetables" },
+  { id: "3", name: "Dairy" },
+  { id: "4", name: "Bakery" },
+  { id: "5", name: "Snacks" },
+  { id: "6", name: "Beverages" },
+];
 
 const getStockStatus = (stock: number) => {
   if (stock === 0) return { label: "Out of Stock", color: "bg-red-100 text-red-800" };
@@ -145,19 +152,19 @@ const Products = () => {
                 </div>
                 <div>
                   <Label htmlFor="category">Category</Label>
-                  <Select
-                    value={formData.category}
-                    onValueChange={(value) => setFormData({...formData, category: value})}
-                  >
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select category" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {categories.map(cat => (
-                        <SelectItem key={cat} value={cat}>{cat}</SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
+                    <Select
+                      value={formData.category}
+                      onValueChange={(value) => setFormData({...formData, category: value})}
+                    >
+                      <SelectTrigger>
+                        <SelectValue placeholder="Select category" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {categories.map(cat => (
+                          <SelectItem key={cat.id} value={cat.name}>{cat.name}</SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
                 </div>
               </div>
 
@@ -247,7 +254,7 @@ const Products = () => {
               <SelectContent>
                 <SelectItem value="all">All Categories</SelectItem>
                 {categories.map(cat => (
-                  <SelectItem key={cat} value={cat}>{cat}</SelectItem>
+                  <SelectItem key={cat.id} value={cat.name}>{cat.name}</SelectItem>
                 ))}
               </SelectContent>
             </Select>
