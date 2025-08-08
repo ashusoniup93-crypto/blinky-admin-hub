@@ -7,6 +7,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { Label } from "@/components/ui/label";
 import { Search, Plus, Edit, Trash2, User, Phone, Building, CreditCard, Minus } from "lucide-react";
 import { toast } from "sonner";
+import { useNavigate } from "react-router-dom";
 
 const customers = [
   {
@@ -50,6 +51,7 @@ const Customers = () => {
   const [isLedgerDialogOpen, setIsLedgerDialogOpen] = useState(false);
   const [selectedCustomer, setSelectedCustomer] = useState(null);
   const [editingCustomer, setEditingCustomer] = useState(null);
+  const navigate = useNavigate();
   
   const [formData, setFormData] = useState({
     name: "",
@@ -282,7 +284,7 @@ const Customers = () => {
                   <CreditCard className="h-3 w-3 mr-1" />
                   Ledger
                 </Button>
-                <Button size="sm" variant="outline" className="flex-1">
+                <Button size="sm" variant="outline" className="flex-1" onClick={() => navigate(`/invoices/new?customer=${customer.id}`)}>
                   Invoice
                 </Button>
               </div>
