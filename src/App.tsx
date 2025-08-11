@@ -9,6 +9,11 @@ import Orders from "./pages/Orders";
 import Products from "./pages/Products";
 import Customers from "./pages/Customers";
 import Categories from "./pages/Categories";
+import Invoices from "./pages/Invoices";
+import InvoiceBuilder from "./pages/InvoiceBuilder";
+import Promos from "./pages/Promos";
+import Banners from "./pages/Banners";
+import Shipping from "./pages/Shipping";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,10 +31,11 @@ const App = () => (
             <Route path="products" element={<Products />} />
             <Route path="categories" element={<Categories />} />
             <Route path="customers" element={<Customers />} />
-            <Route path="invoices" element={<div>Invoices Page</div>} />
-            <Route path="promos" element={<div>Promo Codes Page</div>} />
-            <Route path="banners" element={<div>Banners Page</div>} />
-            <Route path="shipping" element={<div>Shipping Page</div>} />
+            <Route path="invoices" element={<Invoices />} />
+            <Route path="invoices/new" element={<InvoiceBuilder />} />
+            <Route path="promos" element={<Promos />} />
+            <Route path="banners" element={<Banners />} />
+            <Route path="shipping" element={<Shipping />} />
             <Route path="settings" element={<div>Settings Page</div>} />
           </Route>
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
