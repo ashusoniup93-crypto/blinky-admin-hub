@@ -14,6 +14,7 @@ import InvoiceBuilder from "./pages/InvoiceBuilder";
 import Promos from "./pages/Promos";
 import Banners from "./pages/Banners";
 import Shipping from "./pages/Shipping";
+import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -36,6 +37,7 @@ const App = () => (
             <Route path="promos" element={<Promos />} />
             <Route path="banners" element={<Banners />} />
             <Route path="shipping" element={<Shipping />} />
+            <Route path="profile" element={<Profile />} />
             <Route path="settings" element={<div>Settings Page</div>} />
           </Route>
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

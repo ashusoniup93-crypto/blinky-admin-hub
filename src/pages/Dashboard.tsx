@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Clock, Eye, MapPin, UserPlus, CreditCard, FileText, TrendingUp, Package, Settings, Percent } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const recentOrders = [
   {
@@ -45,6 +46,7 @@ const getStatusColor = (status: string) => {
 };
 
 const Dashboard = () => {
+  const navigate = useNavigate();
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center">
@@ -63,35 +65,35 @@ const Dashboard = () => {
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-            <Button variant="outline" className="h-20 flex-col gap-2">
+            <Button variant="outline" className="h-20 flex-col gap-2" onClick={() => navigate("/customers")}>
               <UserPlus className="h-6 w-6" />
               <span className="text-xs">Add Customer</span>
             </Button>
-            <Button variant="outline" className="h-20 flex-col gap-2">
+            <Button variant="outline" className="h-20 flex-col gap-2" onClick={() => navigate("/customers")}>
               <CreditCard className="h-6 w-6" />
               <span className="text-xs">Collect Money</span>
             </Button>
-            <Button variant="outline" className="h-20 flex-col gap-2">
+            <Button variant="outline" className="h-20 flex-col gap-2" onClick={() => navigate("/customers")}>
               <CreditCard className="h-6 w-6 rotate-180" />
               <span className="text-xs">Pay Money</span>
             </Button>
-            <Button variant="outline" className="h-20 flex-col gap-2">
+            <Button variant="outline" className="h-20 flex-col gap-2" onClick={() => navigate("/invoices/new")}>
               <FileText className="h-6 w-6" />
               <span className="text-xs">Create Invoice</span>
             </Button>
-            <Button variant="outline" className="h-20 flex-col gap-2">
+            <Button variant="outline" className="h-20 flex-col gap-2" onClick={() => navigate("/products")}>
               <Package className="h-6 w-6" />
               <span className="text-xs">Add Product</span>
             </Button>
-            <Button variant="outline" className="h-20 flex-col gap-2">
+            <Button variant="outline" className="h-20 flex-col gap-2" onClick={() => navigate("/orders")}>
               <TrendingUp className="h-6 w-6" />
               <span className="text-xs">Reports</span>
             </Button>
-            <Button variant="outline" className="h-20 flex-col gap-2">
+            <Button variant="outline" className="h-20 flex-col gap-2" onClick={() => navigate("/promos")}>
               <Percent className="h-6 w-6" />
               <span className="text-xs">Promo Codes</span>
             </Button>
-            <Button variant="outline" className="h-20 flex-col gap-2">
+            <Button variant="outline" className="h-20 flex-col gap-2" onClick={() => navigate("/settings")}>
               <Settings className="h-6 w-6" />
               <span className="text-xs">Settings</span>
             </Button>
@@ -104,7 +106,7 @@ const Dashboard = () => {
         <Card className="lg:col-span-2">
           <CardHeader className="flex flex-row items-center justify-between">
             <CardTitle>Recent Orders</CardTitle>
-            <Button variant="outline" size="sm">
+            <Button variant="outline" size="sm" onClick={() => navigate("/orders")}>
               <Eye className="h-4 w-4 mr-2" />
               View All
             </Button>

@@ -11,6 +11,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { Link } from "react-router-dom";
 
 export const AdminHeader = () => {
   const isMobile = useIsMobile();
@@ -51,8 +52,8 @@ export const AdminHeader = () => {
           <DropdownMenuContent align="end">
             <DropdownMenuLabel>Admin Account</DropdownMenuLabel>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>Profile Settings</DropdownMenuItem>
-            <DropdownMenuItem>Business Settings</DropdownMenuItem>
+            <DropdownMenuItem asChild><Link to="/profile?tab=personal">Profile Settings</Link></DropdownMenuItem>
+            <DropdownMenuItem asChild><Link to="/profile?tab=business">Business Settings</Link></DropdownMenuItem>
             <DropdownMenuSeparator />
             <DropdownMenuItem>Logout</DropdownMenuItem>
           </DropdownMenuContent>

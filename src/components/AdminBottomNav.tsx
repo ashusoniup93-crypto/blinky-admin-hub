@@ -6,7 +6,7 @@ const navItems = [
   { title: "Customers", url: "/customers", icon: Users },
   { title: "Orders", url: "/orders", icon: ShoppingBag },
   { title: "Categories", url: "/categories", icon: Tag },
-  { title: "Profile", url: "/settings", icon: User },
+  { title: "Profile", url: "/profile", icon: User },
 ];
 
 export const AdminBottomNav = () => {
